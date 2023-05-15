@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Badge from "./Badge";
 import H3 from "./H3";
 import ParagraphArticle from "./ParagraphArticle";
@@ -29,7 +30,24 @@ export default function Article({
     <>
       <article>
         <div className="flex">
-          {/* <Image></Image> */}
+          {!!image && (
+            <Image
+              src={image}
+              alt={""}
+              className="hidden md:block"
+              width={1174}
+              height={990}
+            />
+          )}
+          {!!mobileImage && (
+            <Image
+              src={mobileImage}
+              alt={""}
+              className="block md:hidden"
+              width={1000}
+              height={585}
+            />
+          )}
           <div>
             <Badge>{badge}</Badge>
             <H3>{header}</H3>

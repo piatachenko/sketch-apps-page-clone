@@ -10,12 +10,9 @@ const articles = [
     header: "Design on your Mac",
     paragraph:
       "Design, prototype, and illustrate in a truly native macOS app, online or offline. Work in private or collaborate with others, in real time.",
-    image:
-      "https://sketch-cdn.imgix.net/assets/pages/apps/app-images/desktop/macapp-image-updated%404x.png?ixlib=rb-4.1.0&w=587&q=95&fm=png&auto=format&s=a886f311b31cc626b39f1bd6c5d40832",
-    mobileImage:
-      "https://sketch-cdn.imgix.net/assets/pages/apps/app-images/mobile/macapp-image%404x.png?ixlib=rb-4.1.0&w=400&q=95&fm=png&auto=format&s=e0ade0a963ba52af9bba9cdecb2f0b79",
-    moreImage:
-      "https://sketch-cdn.imgix.net/assets/blog/mac-app-2022-summary-header.jpg?ixlib=rb-4.1.0&fit=crop&dpr=2&w=64&h=64&q=95&fm=jpg&auto=format&s=078a61ab6d377658bcb58aaf154fdca0",
+    image: "/article-first-default.avif",
+    mobileImage: "/article-first-mobile.avif",
+    moreImage: "/1ml.avif",
     moreText: "Everything you need to know about the Sketch <b>Mac app</b>",
     actionText: "Download for macOS",
     additional: {
@@ -28,12 +25,9 @@ const articles = [
     header: "Explore in your browser",
     paragraph:
       "Browse documents, inspect designs, export assets, discuss feedback, manage users, and invite guests — on any computer, in any browser.",
-    image:
-      "https://sketch-cdn.imgix.net/assets/pages/apps/app-images/desktop/webapp-image-updated%404x.png?ixlib=rb-4.1.0&w=587&q=95&fm=png&auto=format&s=8e9f8c274930e1180b3114a9087d9e16",
-    mobileImage:
-      "https://sketch-cdn.imgix.net/assets/pages/apps/app-images/mobile/webapp-image%404x.png?ixlib=rb-4.1.0&w=400&q=95&fm=png&auto=format&s=ac1ae9edd0382fdf4f54612d23bae1d8",
-    moreImage:
-      "https://sketch-cdn.imgix.net/assets/blog/web-app-2022-summary-header.png?ixlib=rb-4.1.0&fit=crop&dpr=2&w=64&h=64&q=95&fm=jpg&auto=format&s=b6d97aaafb51951bb31f271d29c40f23",
+    image: "/article-second-default.avif",
+    mobileImage: "/article-second-mobile.avif",
+    moreImage: "/2ml.avif",
     moreText: "Everything you need to know about the Sketch <b>Web app</b>",
     actionText: "Open the web app",
   },
@@ -42,10 +36,8 @@ const articles = [
     header: "Preview on iPhone",
     paragraph:
       "View your documents on the go, play prototypes on a real device, and mirror designs as you edit them on your Mac.",
-    image:
-      "https://sketch-cdn.imgix.net/assets/pages/apps/app-images/desktop/iphoneapp-image%404x.png?ixlib=rb-4.1.0&w=587&q=95&fm=png&auto=format&s=647d1050facbd578f9fb1e81c1c04654",
-    mobileImage:
-      "https://sketch-cdn.imgix.net/assets/pages/apps/app-images/mobile/iphoneapp-image%404x.png?ixlib=rb-4.1.0&w=400&q=95&fm=png&auto=format&s=b71ddac6344b75b1d614c09033beec2b",
+    image: "/article-third-default.avif",
+    mobileImage: "/article-third-mobile.avif",
     actionText: "Download on the App Store",
     additional: {
       "Our iPhone app works exclusively with Workspace documents.": "",
