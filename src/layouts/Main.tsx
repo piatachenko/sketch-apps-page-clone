@@ -6,7 +6,7 @@ export default function Main({ children }: { children: ReactNode }) {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main className="mx-auto max-w-[75rem]">{children}</main>
       <Footer />
     </>
   );
