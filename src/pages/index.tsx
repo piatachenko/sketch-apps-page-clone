@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Article from "~/components/Article";
 import H1 from "~/components/H1";
+import HeaderParagraph from "~/components/HeaderParagraph";
 import Main from "~/layouts/Main";
 
 const articles = [
@@ -54,14 +55,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        <section>
-          <header>
-            <H1>Every hero needs a sidekick. We have two.</H1>
-            <p>
-              Create with our award-winning macOS app, share your projects in the
-              browser (on any platform), and take Sketch with you.
-            </p>
-          </header>
+        <header className="mx-auto mb-24 mt-[12rem] max-w-4xl [&_h1]:mb-[1.55rem] [&_p]:px-[4rem]">
+          <H1>Every hero needs a sidekick. We have two.</H1>
+          <HeaderParagraph>
+            Create with our award-winning macOS app, share your projects in the
+            browser (on any platform), and take Sketch with you.
+          </HeaderParagraph>
+        </header>
+        <section className="overflow-hidden rounded-xl border border-black/10">
           <div>
             {articles.map((article, index) => (
               <Article
