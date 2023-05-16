@@ -48,15 +48,27 @@ export default function Article({
             height={585}
           />
         )}
-        <div className="space-y-2 pl-8 pr-10 pt-14 group-first:translate-y-[-.12rem]">
-          {!!badge && <Badge>{badge}</Badge>}
+        <div className="pl-8 pr-10 pt-14 group-first:translate-y-[-.12rem]">
+          {!!badge && (
+            <div className="mb-4">
+              <Badge>{badge}</Badge>
+            </div>
+          )}
           {!!header && (
-            <div className="pt-2">
+            <div className="mb-2">
               <H3>{header}</H3>
             </div>
           )}
-          {!!header && <Paragraph>{paragraph}</Paragraph>}
-          {!!more && <MoreLink props={more} />}
+          {!!header && (
+            <div className="mb-8">
+              <Paragraph>{paragraph}</Paragraph>
+            </div>
+          )}
+          {!!more && (
+            <div className="mb-10">
+              <MoreLink props={more} />
+            </div>
+          )}
           {!!action && <ActionLink props={action} />}
         </div>
       </article>
