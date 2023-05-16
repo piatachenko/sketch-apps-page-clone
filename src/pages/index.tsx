@@ -13,9 +13,15 @@ const articles = [
       "Design, prototype, and illustrate in a truly native macOS app, online or offline. Work in private or collaborate with others, in real time.",
     image: "/article-first-default.avif",
     mobileImage: "/article-first-mobile.avif",
-    moreImage: "/1ml.avif",
-    moreText: "Everything you need to know about the Sketch <b>Mac app</b>",
-    actionText: "Download for macOS",
+    more: {
+      image: "/1ml.avif",
+      text: "Everything you need to know about the Sketch <b>Mac app</b>",
+      link: "https://www.sketch.com/blog/everything-about-the-sketch-mac-app-2022/",
+    },
+    action: {
+      text: "Download for macOS",
+      link: "https://www.sketch.com/downloads/mac/",
+    },
     additional: {
       "Browse old versions": "https://www.sketch.com/releases/mac/",
       "Download Beta": "https://www.sketch.com/beta/",
@@ -28,9 +34,12 @@ const articles = [
       "Browse documents, inspect designs, export assets, discuss feedback, manage users, and invite guests — on any computer, in any browser.",
     image: "/article-second-default.avif",
     mobileImage: "/article-second-mobile.avif",
-    moreImage: "/2ml.avif",
-    moreText: "Everything you need to know about the Sketch <b>Web app</b>",
-    actionText: "Open the web app",
+    more: {
+      image: "/2ml.avif",
+      text: "Everything you need to know about the Sketch <b>Web app</b>",
+      link: "https://www.sketch.com/blog/everything-about-the-sketch-web-app-2022/",
+    },
+    action: { text: "Open the web app", link: "https://www.sketch.com/c" },
   },
   {
     badge: "For everyone",
@@ -39,7 +48,10 @@ const articles = [
       "View your documents on the go, play prototypes on a real device, and mirror designs as you edit them on your Mac.",
     image: "/article-third-default.avif",
     mobileImage: "/article-third-mobile.avif",
-    actionText: "Download on the App Store",
+    action: {
+      text: "Download on the App Store",
+      link: "https://apps.apple.com/app/sketch-view-and-mirror/id1609224699",
+    },
     additional: {
       "Our iPhone app works exclusively with Workspace documents.": "",
     },
@@ -72,9 +84,8 @@ const Home: NextPage = () => {
                 paragraph={article.paragraph}
                 image={article.image}
                 mobileImage={article.mobileImage}
-                moreImage={article.moreImage}
-                moreText={article.moreText}
-                actionText={article.actionText}
+                more={article.more}
+                action={article.action}
                 additional={article.additional}
               />
             ))}
