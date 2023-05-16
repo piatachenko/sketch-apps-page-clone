@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ActionLink from "./ActionLink";
+import AdditionalArticle from "./AdditionalArticle";
 import Badge from "./Badge";
 import H3 from "./H3";
 import MoreLink from "./MoreLink";
@@ -65,11 +66,14 @@ export default function Article({
             </div>
           )}
           {!!more && (
-            <div className="mb-10">
+            <div className="mb-[3.75rem]">
               <MoreLink props={more} />
             </div>
           )}
-          {!!action && <ActionLink props={action} />}
+          {!!action && <div className="mb-[1.6rem]">
+            <ActionLink props={action} />
+          </div>}
+          {!!additional && <AdditionalArticle props={additional} />}
         </div>
       </article>
     </>
