@@ -1,6 +1,8 @@
 import Image from "next/image";
+import ActionLink from "./ActionLink";
 import Badge from "./Badge";
 import H3 from "./H3";
+import MoreLink from "./MoreLink";
 import Paragraph from "./Paragraph";
 
 interface ArticleProps {
@@ -10,8 +12,8 @@ interface ArticleProps {
   image?: string;
   mobileImage?: string;
   moreImage?: string;
-  moreText?: string;
-  actionText?: string;
+  more?: { [key: string]: string };
+  action?: {};
   additional?: {};
 }
 
@@ -21,9 +23,8 @@ export default function Article({
   paragraph,
   image,
   mobileImage,
-  moreImage,
-  moreText,
-  actionText,
+  more,
+  action,
   additional,
 }: ArticleProps) {
   return (
@@ -47,15 +48,16 @@ export default function Article({
             height={585}
           />
         )}
-        <div className="space-y-2 pl-8 pt-14 group-first:translate-y-[-.12rem]">
-          <Badge>{badge}</Badge>
-          <div className="pt-2">
-            <H3>{header}</H3>
-          </div>
-          <div className="pr-10">
-            <Paragraph>{paragraph}</Paragraph>
-          </div>
-          link link
+        <div className="space-y-2 pl-8 pr-10 pt-14 group-first:translate-y-[-.12rem]">
+          {!!badge && <Badge>{badge}</Badge>}
+          {!!header && (
+            <div className="pt-2">
+              <H3>{header}</H3>
+            </div>
+          )}
+          {!!header && <Paragraph>{paragraph}</Paragraph>}
+          {!!more && <MoreLink props={more} />}
+          {!!action && <ActionLink props={action} />}
         </div>
       </article>
     </>
