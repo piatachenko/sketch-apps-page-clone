@@ -8,8 +8,8 @@ export default function ActionLink({
   return (
     <>
       {!!props.link && (
-        <Link href={props.link}>
-          <span>{props.text}</span>
+        <Link href={props.link} className="bg-black hover:bg-black/[.85] focus:outline-black/10 outline-2 outline text-white px-4 py-3.5 font-semibold rounded-md">
+          {props.text}
         </Link>
       )}
     </>
