@@ -1,14 +1,11 @@
 import Link from "next/link";
 
 interface ActionLinkProps {
-  link: string;
   text: string;
+  link: string;
 }
 
-export default function ActionLink({
-  link,
-  text,
-}: ActionLinkProps) {
+export default function ActionLink({ text, link }: ActionLinkProps) {
   return (
     <>
       <Link

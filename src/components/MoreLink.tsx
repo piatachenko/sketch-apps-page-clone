@@ -1,12 +1,12 @@
 import { type CSSProperties } from "react";
 
 interface MoreLinkProps {
-  link: string;
   text: string;
+  link: string;
   image?: string;
 }
 
-export default function MoreLink({ link, text, image }: MoreLinkProps) {
+export default function MoreLink({ text, link, image }: MoreLinkProps) {
   return (
     <>
       <a

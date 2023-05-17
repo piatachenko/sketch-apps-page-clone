@@ -22,10 +22,13 @@ const articles = [
       text: "Download for macOS",
       link: "https://www.sketch.com/downloads/mac/",
     },
-    additional: {
-      "Browse old versions": "https://www.sketch.com/releases/mac/",
-      "Download Beta": "https://www.sketch.com/beta/",
-    },
+    additional: [
+      {
+        text: "Browse old versions",
+        link: "https://www.sketch.com/releases/mac/",
+      },
+      { text: "Download Beta", link: "https://www.sketch.com/beta/" },
+    ],
   },
   {
     badge: "For everyone",
@@ -52,9 +55,11 @@ const articles = [
       text: "Download on the App Store",
       link: "https://apps.apple.com/app/sketch-view-and-mirror/id1609224699",
     },
-    additional: {
-      "Our iPhone app works exclusively with Workspace documents.": "",
-    },
+    additional: [
+      {
+        text: "Our iPhone app works exclusively with Workspace documents.",
+      },
+    ],
   },
 ];
 
