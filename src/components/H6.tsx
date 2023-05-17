@@ -1,7 +1,7 @@
-export default function H6({ children }: { children?: string }) {
+export default function H6({ children }: { children: string }) {
   return (
     <>
-      <h6 className={children ? '' : 'hidden'} >{children}</h6>
+      <h6 className="">{children}</h6>
     </>
   );
 }
