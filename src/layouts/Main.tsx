@@ -1,15 +1,17 @@
 import { type ReactNode } from "react";
 import FixedLink from "~/components/FixedLink";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 export default function Main({ children }: { children: ReactNode }) {
   return (
     <>
       <FixedLink/>
-      <Navbar />
-      <main className="mx-auto max-w-[75rem]">{children}</main>
-      <Footer />
+      <div className="mx-auto max-w-[75rem]">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </>
   );
 }
