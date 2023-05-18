@@ -60,7 +60,7 @@ export default function Article({
               <H3>{header}</H3>
             </div>
           )}
-          {!!header && (
+          {!!paragraph && (
             <div className="mb-8">
               <Paragraph>{paragraph}</Paragraph>
             </div>
