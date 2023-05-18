@@ -1,3 +1,9 @@
+import { Fragment } from "react";
+import ActionLink from "./ActionLink";
+import Dropdown from "./Dropdown";
+import NavLink from "./NavLink";
+import Link from "next/link";
+
 const navLinks = [
   {
     Product: {
@@ -93,9 +99,32 @@ export default function Navbar() {
   return (
     <>
       <nav>
-        <div>
-          <div></div>
-          <div></div>
+        <div className="flex items-center justify-between">
+          <div className="items center flex">
+            <Link href={"https://www.sketch.com/"} className="logo w-[32px] aspect-square bg-no-repeat"/>
+            <div>
+              {navLinks.map((navLink, index) => (
+                <Fragment key={index}>
+                  {Object.entries(navLink).map(([title, link], index) => (
+                    <Fragment key={index}>
+                      {typeof link === "string" ? (
+                        <NavLink text={title} link={link} />
+                      ) : typeof link === "object" ? (
+                        <Dropdown />
+                      ) : null}
+                    </Fragment>
+                  ))}
+                </Fragment>
+              ))}
+            </div>
+          </div>
+          <div>
+            <NavLink text={"Sign In"} link={"https://www.sketch.com/signin/"} />
+            <ActionLink
+              text={"Get started"}
+              link={"https://www.sketch.com/signup/"}
+            />
+          </div>
         </div>
       </nav>
     </>
