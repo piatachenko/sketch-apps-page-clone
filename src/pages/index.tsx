@@ -72,7 +72,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        <header className="mx-auto mb-24 mt-[12rem] max-w-4xl [&_h1]:mb-[1.55rem] [&_p]:px-[4rem]">
+        <header className="mx-auto mb-24 max-w-4xl [&_h1]:mb-[1.55rem] [&_p]:px-[4rem]">
           <H1>Every hero needs a sidekick. We have two.</H1>
           <HeaderParagraph>
             Create with our award-winning macOS app, share your projects in the
