@@ -14,7 +14,10 @@ interface ArticleProps {
   mobileImage?: string;
   moreImage?: string;
   more?: { [key: string]: string };
-  action?: {};
+  action?: {
+    text:string,
+    link:string
+  };
   additional?: {};
 }
 
@@ -71,7 +74,7 @@ export default function Article({
             </div>
           )}
           {!!action && <div className="mb-[1.6rem]">
-            <ActionLink props={action} />
+            <ActionLink link={action.link} text={action.text} />
           </div>}
           {!!additional && <AdditionalArticle props={additional} />}
         </div>
