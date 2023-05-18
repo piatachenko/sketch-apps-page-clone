@@ -1,15 +1,20 @@
 import Link from "next/link";
 
+interface AdditionalArticleProps {
+  additional: { text: string; link?: string }[];
+}
+
 export default function AdditionalArticle({
-  props,
-}: {
-  props: { [key: string]: string };
-}) {
+  additional,
+}: AdditionalArticleProps) {
   return (
     <>
-      {Object.entries(props).map(([text, link], index) =>
+      {additional.map(({ text, link }, index) =>
         link ? (
-          <span key={index} className="after:mx-2 after:content-['·'] last:after:hidden">
+          <span
+            key={index}
+            className="after:mx-2 after:content-['·'] last:after:hidden"
+          >
             <Link
               href={link}
               className="text-[.875rem] font-medium leading-[1.3125rem] transition-colors duration-[.125s] ease-out hover:text-black/[.48]"

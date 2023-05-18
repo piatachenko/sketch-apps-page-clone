@@ -13,12 +13,16 @@ interface ArticleProps {
   image?: string;
   mobileImage?: string;
   moreImage?: string;
-  more?: { [key: string]: string };
-  action?: {
-    text:string,
-    link:string
+  more?: {
+    link: string;
+    text: string;
+    image?: string;
   };
-  additional?: {};
+  action?: {
+    link: string;
+    text: string;
+  };
+  additional?: { text: string; link?: string }[];
 }
 
 export default function Article({
@@ -70,13 +74,15 @@ export default function Article({
           )}
           {!!more && (
             <div className="mb-[3.75rem]">
-              <MoreLink props={more} />
+              <MoreLink link={more.link} text={more.text} image={more.image} />
             </div>
           )}
-          {!!action && <div className="mb-[1.6rem]">
-            <ActionLink link={action.link} text={action.text} />
-          </div>}
-          {!!additional && <AdditionalArticle props={additional} />}
+          {!!action && (
+            <div className="mb-[1.6rem]">
+              <ActionLink link={action.link} text={action.text} />
+            </div>
+          )}
+          {!!additional && <AdditionalArticle additional={additional} />}
         </div>
       </article>
     </>
