@@ -7,7 +7,7 @@ import NavLink from "./NavLink";
 const navLinks = [
   {
     Product: {
-      defaultStripe: "/stripe-product.png",
+      stripe: "/stripe-product.png",
       "": {
         Design: {
           link: "https://www.sketch.com/design/",
@@ -51,13 +51,16 @@ const navLinks = [
           link: "https://www.sketch.com/updates/#annotations-in-the-mac-app",
           date: "18 JAN",
         },
-        More: { "See all updates": "https://www.sketch.com/updates/" },
+        More: {
+          text: "See all updates",
+          link: "https://www.sketch.com/updates/",
+        },
       },
     },
   },
   {
     Learn: {
-      defaultStripe: "/stripe-learn.png",
+      stripe: "/stripe-learn.png",
       Courses: {
         "Sketch 101": {
           link: "https://www.sketch.com/courses/sketch-101/",
@@ -80,17 +83,21 @@ const navLinks = [
   { Pricing: "https://www.sketch.com/pricing/" },
   {
     "Why Sketch": {
-      "Switch to Sketch": "https://www.sketch.com/switch-to-sketch/",
-      "Sketch vs. Figma": "https://www.sketch.com/vs/figma/",
-      "Sketch vs. Adobe XD": "https://www.sketch.com/vs/xd/",
-      "Free for Education": "https://www.sketch.com/education/",
+      "": {
+        "Switch to Sketch": "https://www.sketch.com/switch-to-sketch/",
+        "Sketch vs. Figma": "https://www.sketch.com/vs/figma/",
+        "Sketch vs. Adobe XD": "https://www.sketch.com/vs/xd/",
+        "Free for Education": "https://www.sketch.com/education/",
+      },
     },
   },
   {
     Support: {
-      "Sketch Help": "https://help.sketch.com/",
-      "Contact Us": "https://www.sketch.com/support/contact/",
-      "Service Status": "https://status.sketch.com/",
+      "": {
+        "Sketch Help": "https://help.sketch.com/",
+        "Contact Us": "https://www.sketch.com/support/contact/",
+        "Service Status": "https://status.sketch.com/",
+      },
     },
   },
 ];
@@ -100,28 +107,26 @@ export default function Navbar() {
     <>
       <nav>
         <div className="mb-[5.85rem] flex items-center justify-between py-[1.55rem]">
-          <div className="flex items-center">
+          <div className="flex items-center gap-6">
             <Link
               href={"https://www.sketch.com/"}
               className="logo aspect-square w-[32px]"
             />
             <div>
-              {navLinks.map((navLink, index) => (
-                <Fragment key={index}>
-                  {Object.entries(navLink).map(([title, link], index) => (
-                    <Fragment key={index}>
-                      {typeof link === "string" ? (
-                        <NavLink text={title} link={link} />
-                      ) : typeof link === "object" ? (
-                        <Dropdown />
-                      ) : null}
-                    </Fragment>
-                  ))}
-                </Fragment>
-              ))}
+              {navLinks.map((navLink) =>
+                Object.entries(navLink).map(([title, link], index) => (
+                  <Fragment key={index}>
+                    {typeof link === "string" ? (
+                      <NavLink text={title} link={link} />
+                    ) : typeof link === "object" ? (
+                      <Dropdown title={title} dropdown={link} />
+                    ) : null}
+                  </Fragment>
+                ))
+              )}
             </div>
           </div>
-          <div className="space-x-8">
+          <div className="space-x-4">
             <NavLink text={"Sign In"} link={"https://www.sketch.com/signin/"} />
             <ActionLink
               text={"Get started"}
