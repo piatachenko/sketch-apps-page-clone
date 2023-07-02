@@ -59,7 +59,7 @@ export default function Article({
         <div className="pl-8 pr-10 pt-14 group-first:translate-y-[-.12rem]">
           {!!badge && (
             <div className="mb-4">
-              <Badge>{badge}</Badge>
+              <Badge style={"new-york"}>{badge}</Badge>
             </div>
           )}
           {!!header && (
