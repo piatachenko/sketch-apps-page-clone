@@ -51,7 +51,7 @@ const navLinks = [
           link: "https://www.sketch.com/updates/#annotations-in-the-mac-app",
           date: "18 JAN",
         },
-        More: {
+        more: {
           text: "See all updates",
           link: "https://www.sketch.com/updates/",
         },
