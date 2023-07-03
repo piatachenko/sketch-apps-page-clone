@@ -1,3 +1,7 @@
+import { Fragment } from "react";
+import FooterLink from "./FooterLink";
+import H6 from "./H6";
+
 const footerLinks = [
   [
     ["Product"],
@@ -46,6 +50,22 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <></>
+    <>
+      <div className="flex justify-between">
+        {footerLinks.map((col, index) => (
+          <div key={index}>
+            {col.map((link, index) => (
+              <Fragment key={index}>
+                {link[1] ? (
+                  <FooterLink link={link} />
+                ) : link[0] ? (
+                  <H6>{link[0]}</H6>
+                ) : null}
+              </Fragment>
+            ))}
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
