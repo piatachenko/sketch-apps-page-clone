@@ -3,7 +3,7 @@ import ActionLink from "./ActionLink";
 import AdditionalArticle from "./AdditionalArticle";
 import Badge from "./Badge";
 import H3 from "./H3";
-import MoreLink from "./MoreLink";
+import MoreLinkArticle from "./MoreLinkArticle";
 import Paragraph from "./Paragraph";
 
 interface ArticleProps {
@@ -74,7 +74,11 @@ export default function Article({
           )}
           {!!more && (
             <div className="mb-[3.75rem]">
-              <MoreLink text={more.text} link={more.link} image={more.image} />
+              <MoreLinkArticle
+                text={more.text}
+                link={more.link}
+                image={more.image}
+              />
             </div>
           )}
           {!!action && (

@@ -1,13 +1,17 @@
 import Link from "next/link";
 import { type CSSProperties } from "react";
 
-interface MoreLinkProps {
+interface MoreLinkArticleProps {
   text: string;
   link: string;
   image?: string;
 }
 
-export default function MoreLink({ text, link, image }: MoreLinkProps) {
+export default function MoreLinkArticle({
+  text,
+  link,
+  image,
+}: MoreLinkArticleProps) {
   return (
     <>
       <Link
