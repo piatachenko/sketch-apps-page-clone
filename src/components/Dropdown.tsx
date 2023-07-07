@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState, type CSSProperties } from "react";
+import ArrowSlanted from "./ArrowSlanted";
 
 type LinkData = string | { link: string; date?: string; stripe?: string };
 
@@ -83,8 +84,21 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
                         </span>
                       ) : (
                         <>
-                          <span className="overflow-hidden text-ellipsis">
-                            {title}
+                          <span
+                            className={`relative text-ellipsis ${
+                              !!props.date && "overflow-hidden"
+                            }`}
+                          >
+                            <span>
+                              {title}
+                              <span className="absolute left-full translate-y-1/2 bottom-1/2">
+                                {!(
+                                  typeof props === "string" ? props : props.link
+                                ).startsWith("https://sketch.com/") && (
+                                  <ArrowSlanted />
+                                )}
+                              </span>
+                            </span>
                           </span>
                           {props.date && (
                             <span className="hidden pl-5 text-[.6875rem] font-semibold leading-[1rem] text-black/[.48]">
