@@ -43,7 +43,7 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
             </svg>
           </span>
         </span>
-        <span className="absolute left-0 top-9 hidden overflow-hidden rounded-xl border border-black/[.08] bg-white shadow-md group-hover:flex">
+        <span className="pointer-events-none absolute left-0 top-9 flex translate-y-[-5px] overflow-hidden rounded-xl border border-black/[.08] bg-white opacity-0 shadow-md transition-all duration-[.3s] ease-[cubic-bezier(.19,1,.22,1)] group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-[:not(:hover)]:duration-0">
           {!!stripe && (
             <span
               className="w-[--w]"
@@ -91,7 +91,7 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
                           >
                             <span>
                               {title}
-                              <span className="absolute left-full translate-y-1/2 bottom-1/2">
+                              <span className="absolute bottom-1/2 left-full translate-y-1/2">
                                 {!(
                                   typeof props === "string" ? props : props.link
                                 ).startsWith("https://sketch.com/") && (
