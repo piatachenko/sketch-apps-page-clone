@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, type CSSProperties } from "react";
-import ArrowSlanted from "./ArrowSlanted";
+import ArrowSlanted from "../icons/ArrowSlanted";
 
 type LinkData = string | { link: string; date?: string; stripe?: string };
 

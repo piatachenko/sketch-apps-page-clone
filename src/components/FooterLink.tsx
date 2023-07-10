@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ArrowSlanted from "./ArrowSlanted";
+import ArrowSlanted from "../icons/ArrowSlanted";
 import Badge from "./Badge";
 
 export default function FooterLink({ link }: any) {

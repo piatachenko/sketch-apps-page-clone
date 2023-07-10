@@ -4,7 +4,7 @@ import AdditionalArticle from "./AdditionalArticle";
 import Badge from "./Badge";
 import H3 from "./H3";
 import MoreLinkArticle from "./MoreLinkArticle";
-import Paragraph from "./Paragraph";
+import P from "./P";
 
 interface ArticleProps {
   badge?: string;
@@ -56,7 +56,7 @@ export default function Article({
             height={585}
           />
         )}
-        <div className="pl-8 pr-10 pt-14 group-first:translate-y-[-.12rem]">
+        <div className="py-14 pl-8 pr-10 group-first:translate-y-[-.12rem]">
           {!!badge && (
             <div className="mb-4">
               <Badge style={"new-york"}>{badge}</Badge>
@@ -69,7 +69,7 @@ export default function Article({
           )}
           {!!paragraph && (
             <div className="mb-8">
-              <Paragraph>{paragraph}</Paragraph>
+              <P>{paragraph}</P>
             </div>
           )}
           {!!more && (

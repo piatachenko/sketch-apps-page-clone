@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Fragment } from "react";
-import ActionLink from "./ActionLink";
-import Dropdown from "./Dropdown";
-import NavLink from "./NavLink";
+import ActionLink from "../components/ActionLink";
+import Dropdown from "../components/Dropdown";
+import NavLink from "../components/NavLink";
 
 const navLinks = [
   {
