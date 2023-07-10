@@ -79,7 +79,7 @@ const Home: NextPage = () => {
             browser (on any platform), and take Sketch with you.
           </HeaderParagraph>
         </header>
-        <section className="overflow-hidden rounded-xl border border-black/10">
+        <section className="overflow-hidden rounded-xl border backdrop-blur-2xl bg-white/[.64] shadow-[0_4px_8px_0_rgba(0,0,0,.1)] border-black/10">
           <div>
             {articles.map((article, index) => (
               <Article
