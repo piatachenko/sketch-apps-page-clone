@@ -51,7 +51,7 @@ const footerLinks = [
 export default function Footer() {
   return (
     <>
-      <div className="flex justify-between">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] justify-between gap-8 md:grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] lg:flex">
         {footerLinks.map((col, index) => (
           <div key={index}>
             {col.map((link, index) => (

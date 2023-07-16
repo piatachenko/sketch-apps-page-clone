@@ -10,11 +10,11 @@ export default function ArrowSlanted() {
         <path
           d="M10.5 8H16v5.5M16 8l-7.5 7.5"
           stroke="currentColor"
-          stroke-width="1.5"
+          strokeWidth="1.5"
           fill="none"
-          fill-rule="evenodd"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          fillRule="evenodd"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></path>
       </svg>
     </>
