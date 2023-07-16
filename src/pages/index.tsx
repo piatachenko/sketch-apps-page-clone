@@ -74,7 +74,7 @@ const Home: NextPage = () => {
       </Head>
       <Main>
         <Header>
-          <H1>Every hero needs a sidekick. We have two.</H1>
+          <H1 animated>Every hero needs a sidekick. We have two.</H1>
           <HeaderParagraph>
             Create with our award-winning macOS app, share your projects in the
             browser (on any platform), and take Sketch with you.
