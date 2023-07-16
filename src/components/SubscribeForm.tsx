@@ -18,8 +18,8 @@ export default function SubscribeForm() {
 
   return (
     <>
-      <div className="mt-24 flex gap-8">
-        <div className="basis-2/3 pt-1">
+      <div className="mt-16 md:mt-24 flex max-md:flex-col gap-4 md:gap-8">
+        <div className="basis-1/2 lg:basis-2/3 pt-1">
           <H5>Incredible design, right in your inbox</H5>
 
           <div className="font-light leading-6 opacity-70">
@@ -28,7 +28,7 @@ export default function SubscribeForm() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="basis-1/3">
+        <form onSubmit={handleSubmit} className="basis-1/2 lg:basis-1/3">
           <div>
             <div className="flex w-full gap-2">
               <TextInput
