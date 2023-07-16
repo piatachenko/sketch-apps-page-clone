@@ -51,7 +51,7 @@ html {
 
 .arrow {
   --arrow-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' color='%23000'%3E%3Cpath d='m13 8 4 4-4 4m2.5-4h-9' stroke='currentColor' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  @apply after:-mt-96 after:inline-block after:translate-y-[.4rem] after:leading-[0] after:opacity-[.32] after:content-[--arrow-icon];
+  @apply after:-mt-96 after:inline-block after:translate-y-[.425rem] after:leading-[0] after:opacity-[.32] after:content-[--arrow-icon];
 }
 
 .logo {

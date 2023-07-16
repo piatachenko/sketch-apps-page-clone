@@ -18,7 +18,7 @@ export default function SubscribeForm() {
 
   return (
     <>
-      <div className="mt-16 md:mt-24 flex max-md:flex-col gap-4 md:gap-8">
+      <div className="mt-16 lg:mt-24 flex max-md:flex-col gap-4 md:gap-8">
         <div className="basis-1/2 lg:basis-2/3 pt-1">
           <H5>Incredible design, right in your inbox</H5>
 

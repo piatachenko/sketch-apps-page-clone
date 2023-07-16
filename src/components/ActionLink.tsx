@@ -10,7 +10,7 @@ export default function ActionLink({ text, link }: ActionLinkProps) {
     <>
       <Link
         href={link}
-        className="rounded-md bg-black px-4 py-3.5 font-semibold text-white outline outline-2 hover:bg-black/[.85] focus:outline-black/10"
+        className="rounded-md bg-black p-3 font-semibold text-white outline outline-2 hover:bg-black/[.85] focus:outline-black/10 max-lg:text-sm lg:px-[0.9rem] lg:py-3.5"
       >
         {text}
       </Link>
