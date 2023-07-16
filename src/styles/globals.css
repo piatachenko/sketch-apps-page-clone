@@ -70,3 +70,7 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
 }
+
+::selection {
+  @apply bg-[#ffb387];
+}
