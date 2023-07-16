@@ -3,6 +3,7 @@ import Head from "next/head";
 import Article from "~/components/Article";
 import H1 from "~/components/H1";
 import HeaderParagraph from "~/components/HeaderParagraph";
+import Header from "~/layouts/Header";
 import Main from "~/layouts/Main";
 
 const articles = [
@@ -72,14 +73,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        <header className="mx-auto mb-24 max-w-4xl [&_h1]:mb-[1.55rem] [&_p]:px-[4rem]">
+        <Header>
           <H1>Every hero needs a sidekick. We have two.</H1>
           <HeaderParagraph>
             Create with our award-winning macOS app, share your projects in the
             browser (on any platform), and take Sketch with you.
           </HeaderParagraph>
-        </header>
-        <section className="overflow-hidden rounded-xl border backdrop-blur-2xl bg-white/[.64] shadow-[0_4px_8px_0_rgba(0,0,0,.1)] border-black/10">
+        </Header>
+        <section className="overflow-hidden rounded-xl border border-black/10 bg-white/[.64] shadow-[0_4px_8px_0_rgba(0,0,0,.1)] backdrop-blur-2xl">
           <div>
             {articles.map((article, index) => (
               <Article
