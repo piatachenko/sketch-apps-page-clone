@@ -98,7 +98,7 @@ export default function SubscribeForm() {
 
             <button
               ref={btnRef}
-              className="relative whitespace-nowrap rounded-md bg-black px-[.825rem] py-[.6875rem] font-semibold text-white outline outline-2 after:absolute after:inset-0 after:block after:bg-center after:bg-no-repeat after:content-[''] hover:bg-black/[.85] focus:outline-black/10 disabled:bg-black/40"
+              className="relative whitespace-nowrap rounded-md bg-black px-[.825rem] py-[.6875rem] font-semibold text-white outline outline-1 outline-black/40 after:absolute after:inset-0 after:block after:bg-center after:bg-no-repeat after:content-[''] hover:bg-black/[.85] focus:outline-2 focus:outline-black/20 disabled:bg-black/40"
               disabled
             >
               Try it out
