@@ -24,7 +24,9 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
       <div className="group relative block lg:inline-block" tabIndex={0}>
         <div>
           <div
-            className="pb-[.5rem] pr-3 pt-[.625rem] font-semibold transition-colors duration-200 lg:inline max-lg:text-[.6875rem] max-lg:uppercase max-lg:leading-[1rem] max-lg:text-black/[.48] lg:cursor-pointer lg:p-4 lg:pl-4 lg:font-medium lg:hover:text-black/[.48]"
+            className={`pb-1 pr-3 pt-[.625rem] font-semibold transition-colors duration-200 max-lg:text-[.6875rem] max-lg:uppercase max-lg:leading-[1rem] max-lg:text-black/[.48] lg:inline lg:cursor-pointer lg:p-4 lg:pb-2 lg:pl-4 lg:font-medium lg:hover:text-black/[.48] ${
+              title === "Learn" && "max-lg:hidden"
+            }`}
           >
             {title}
             <svg
@@ -45,7 +47,7 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
             </svg>
           </div>
         </div>
-        <div className="left-0 top-9 z-10 rounded-xl transition-all duration-[.3s] ease-[cubic-bezier(.19,1,.22,1)] lg:pointer-events-none lg:absolute lg:flex lg:translate-y-[-5px] lg:overflow-hidden lg:border lg:border-black/[.08] lg:bg-white lg:opacity-0 lg:shadow-md lg:group-hover:pointer-events-auto lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-[:not(:hover)]:duration-0 lg:group-focus-within:pointer-events-auto lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100">
+        <div className="left-0 top-9 z-10 rounded-xl transition-all duration-[.3s] ease-[cubic-bezier(.19,1,.22,1)] lg:pointer-events-none lg:absolute lg:flex lg:translate-y-[-5px] lg:overflow-hidden lg:border lg:border-black/[.08] lg:bg-white lg:opacity-0 lg:shadow-md lg:group-focus-within:pointer-events-auto lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100 lg:group-hover:pointer-events-auto lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-[:not(:hover)]:duration-0">
           {!!stripe && (
             <div
               className="w-[--w]"
@@ -60,9 +62,16 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
           {filterLinks(dropdown).map(([title, links], index) => (
             <div
               key={index}
-              className="w-[16.5625rem] border-black/[.08] pb-1.5 pt-2 lg:[&:not(:last-child)]:border-r"
+              className={`border-black/[.08] pb-1.5 lg:w-[16.5625rem] lg:pt-2 lg:[&:not(:last-child)]:border-r ${
+                links.more && "max-lg:hidden"
+              }`}
             >
-              <div className="inline-block pb-[.5rem] pr-3 pt-[.625rem] text-[.6875rem] font-semibold uppercase leading-[1rem] text-black/[.48] lg:pl-4 [&:empty]:inline [&:empty]:p-0">
+              <div
+                className={`inline-block pb-2 pr-3 pt-[.625rem] text-[.6875rem] font-semibold uppercase leading-[1rem] text-black/[.48] lg:pl-4 [&:empty]:inline [&:empty]:p-0 ${
+                  title === "More" &&
+                  "max-lg:invisible max-lg:before:visible max-lg:before:content-['Learn'] "
+                }`}
+              >
                 {title}
               </div>
               <div>

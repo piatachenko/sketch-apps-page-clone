@@ -108,7 +108,13 @@ export default function Navbar() {
   return (
     <>
       <nav>
-        <div className="inset-x-0 top-0 z-40 flex items-center justify-between py-[.325rem] max-lg:fixed max-lg:bg-white/80 max-lg:px-2.5 max-lg:shadow-[0_0_0_0.0625rem_rgba(0,0,0,.08)] max-lg:backdrop-blur-2xl dark:max-lg:bg-black/80 lg:py-[1.55rem]">
+        <div
+          className={`inset-x-0 top-0 z-30 flex items-center justify-between py-[.325rem] transition-all ease-[cubic-bezier(.455,.03,.515,.955)] max-lg:fixed max-lg:bg-white/80 max-lg:px-2.5 max-lg:shadow-[0_0_0_0.0625rem_rgba(0,0,0,.08)] max-lg:backdrop-blur-2xl dark:max-lg:bg-black/80 lg:py-[1.55rem] ${
+            isAsideVisible
+              ? "max-lg:-translate-y-full"
+              : "translate-y-0 duration-0"
+          }`}
+        >
           <button onClick={() => setIsAsideVisible(true)} className="lg:hidden">
             <div className="relative m-4 h-1.5 w-5 before:absolute before:inset-x-0 before:top-0 before:block before:h-0.5 before:-translate-y-full before:bg-black before:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:block after:h-0.5 after:translate-y-full after:bg-black after:content-[''] dark:before:bg-[#ebebeb] dark:after:bg-[#ebebeb]" />
           </button>
@@ -134,7 +140,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="space-x-4 max-lg:contents dark:max-lg:text-white dark:max-lg:[&_:hover]:text-[unset] max-lg:[&_*]:text-[.9375rem] max-xl:[&_.bg-black]:p-3 max-xl:[&_.bg-black]:text-[.875rem] max-lg:[&_.bg-black]:hidden">
+          <div className="space-x-4 max-lg:contents dark:max-lg:text-white max-lg:[&_*]:text-[.9375rem] max-xl:[&_.bg-black]:p-3 max-xl:[&_.bg-black]:text-[.875rem] max-lg:[&_.bg-black]:hidden dark:max-lg:[&_:hover]:text-[unset]">
             <NavLink text={"Sign In"} link={"https://sketch.com/signin/"} />
 
             <ActionLink
