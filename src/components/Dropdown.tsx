@@ -21,12 +21,14 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
 
   return (
     <>
-      <span className="group relative inline-block">
-        <span>
-          <span className="cursor-pointer p-4 font-medium transition-colors duration-200 hover:text-black/[.48]">
+      <div className="group relative block lg:inline-block" tabIndex={0}>
+        <div>
+          <div
+            className="pb-[.5rem] pr-3 pt-[.625rem] font-semibold transition-colors duration-200 lg:inline max-lg:text-[.6875rem] max-lg:uppercase max-lg:leading-[1rem] max-lg:text-black/[.48] lg:cursor-pointer lg:p-4 lg:pl-4 lg:font-medium lg:hover:text-black/[.48]"
+          >
             {title}
             <svg
-              className="ml-1 inline-block translate-y-[-.0375rem] opacity-[.32]"
+              className="ml-1 hidden translate-y-[-.0375rem] opacity-[.32] lg:inline-block"
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -41,33 +43,33 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
                 points="3.75 6 8 10.25 12.249 6.001"
               ></polyline>
             </svg>
-          </span>
-        </span>
-        <span className="pointer-events-none absolute left-0 top-9 flex translate-y-[-5px] overflow-hidden rounded-xl border border-black/[.08] bg-white opacity-0 shadow-md transition-all duration-[.3s] ease-[cubic-bezier(.19,1,.22,1)] group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-[:not(:hover)]:duration-0">
+          </div>
+        </div>
+        <div className="left-0 top-9 z-10 rounded-xl transition-all duration-[.3s] ease-[cubic-bezier(.19,1,.22,1)] lg:pointer-events-none lg:absolute lg:flex lg:translate-y-[-5px] lg:overflow-hidden lg:border lg:border-black/[.08] lg:bg-white lg:opacity-0 lg:shadow-md lg:group-hover:pointer-events-auto lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-[:not(:hover)]:duration-0 lg:group-focus-within:pointer-events-auto lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100">
           {!!stripe && (
-            <span
+            <div
               className="w-[--w]"
               style={{ "--w": "2.5rem" } as CSSProperties}
             >
-              <span
-                className="absolute h-full w-[--w] bg-[image:--stripe] bg-cover transition-all duration-[80ms]"
+              <div
+                className="absolute h-full w-[--w] bg-[image:--stripe] bg-cover transition-all duration-[80ms] max-lg:hidden"
                 style={{ "--stripe": `url('${stripe}')` } as CSSProperties}
               />
-            </span>
+            </div>
           )}
           {filterLinks(dropdown).map(([title, links], index) => (
-            <span
+            <div
               key={index}
-              className="w-[16.5625rem] border-black/[.08] pb-1.5 pt-2 [&:not(:last-child)]:border-r"
+              className="w-[16.5625rem] border-black/[.08] pb-1.5 pt-2 lg:[&:not(:last-child)]:border-r"
             >
-              <span className="inline-block pb-[.5rem] pl-4 pr-3 pt-[.625rem] text-[.6875rem] font-semibold uppercase leading-[1rem] text-black/[.48] [&:empty]:inline [&:empty]:p-0">
+              <div className="inline-block pb-[.5rem] pr-3 pt-[.625rem] text-[.6875rem] font-semibold uppercase leading-[1rem] text-black/[.48] lg:pl-4 [&:empty]:inline [&:empty]:p-0">
                 {title}
-              </span>
-              <span>
+              </div>
+              <div>
                 {Object.entries(links).map(([title, props], index) => (
-                  <span key={index} className="relative block px-2">
+                  <div key={index} className="relative block lg:px-2">
                     <Link
-                      className={`flex items-center rounded-md px-3 py-[.625rem] text-[.9375rem] leading-[1.25rem] hover:bg-[#F5F5F5] ${
+                      className={`flex items-center rounded-md py-[.375rem] text-[.9375rem] leading-[1.25rem] max-lg:text-base lg:px-3 lg:py-[.625rem] lg:hover:bg-[#F5F5F5] ${
                         title === "more"
                           ? "mt-3 justify-center after:absolute after:inset-x-0 after:top-[-0.375rem] after:block after:h-[.5px] after:bg-black/[.08] after:content-['']"
                           : "justify-between whitespace-nowrap [&:hover>span]:inline-block"
@@ -85,8 +87,8 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
                       ) : (
                         <>
                           <span
-                            className={`relative text-ellipsis ${
-                              !!props.date && "overflow-hidden"
+                            className={`relative lg:text-ellipsis ${
+                              !!props.date && "lg:overflow-hidden"
                             }`}
                           >
                             <span>
@@ -101,20 +103,20 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
                             </span>
                           </span>
                           {props.date && (
-                            <span className="hidden pl-5 text-[.6875rem] font-semibold leading-[1rem] text-black/[.48]">
+                            <span className="text-[.6875rem] font-semibold leading-[1rem] text-black/[.48] lg:hidden lg:pl-5">
                               {props.date}
                             </span>
                           )}
                         </>
                       )}
                     </Link>
-                  </span>
+                  </div>
                 ))}
-              </span>
-            </span>
+              </div>
+            </div>
           ))}
-        </span>
-      </span>
+        </div>
+      </div>
     </>
   );
 }

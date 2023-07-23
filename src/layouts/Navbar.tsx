@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import NavAside from "~/components/NavAside";
 import ActionLink from "../components/ActionLink";
 import Dropdown from "../components/Dropdown";
 import NavLink from "../components/NavLink";
 
-const navLinks = [
+export const navLinks = [
   {
     Product: {
       stripe: "/stripe-product.png",
@@ -103,16 +104,22 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [isAsideVisible, setIsAsideVisible] = useState(false);
   return (
     <>
       <nav>
-        <div className="mb-[5.85rem] flex items-center justify-between py-[1.55rem]">
-          <div className="flex items-center gap-6">
+        <div className="inset-x-0 top-0 z-40 flex items-center justify-between py-[.325rem] max-lg:fixed max-lg:bg-white/80 max-lg:px-2.5 max-lg:shadow-[0_0_0_0.0625rem_rgba(0,0,0,.08)] max-lg:backdrop-blur-2xl dark:max-lg:bg-black/80 lg:py-[1.55rem]">
+          <button onClick={() => setIsAsideVisible(true)} className="lg:hidden">
+            <div className="relative m-4 h-1.5 w-5 before:absolute before:inset-x-0 before:top-0 before:block before:h-0.5 before:-translate-y-full before:bg-black before:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:block after:h-0.5 after:translate-y-full after:bg-black after:content-[''] dark:before:bg-[#ebebeb] dark:after:bg-[#ebebeb]" />
+          </button>
+
+          <div className="contents items-center gap-6 lg:flex">
             <Link
               href={"https://sketch.com/"}
-              className="logo aspect-square w-[32px]"
+              className="logo aspect-square w-[32px] transition-opacity duration-[.125s] ease-out hover:opacity-[.48] max-lg:absolute max-lg:right-1/2 max-lg:translate-x-1/2 max-lg:scale-[.81] max-lg:opacity-90 dark:max-lg:invert"
             />
-            <div>
+
+            <div className="max-lg:hidden">
               {navLinks.map((navLink) =>
                 Object.entries(navLink).map(([title, link], index) => (
                   <Fragment key={index}>
@@ -126,8 +133,10 @@ export default function Navbar() {
               )}
             </div>
           </div>
-          <div className="space-x-4">
+
+          <div className="space-x-4 max-lg:contents dark:max-lg:text-white dark:max-lg:[&_:hover]:text-[unset] max-lg:[&_*]:text-[.9375rem] max-xl:[&_.bg-black]:p-3 max-xl:[&_.bg-black]:text-[.875rem] max-lg:[&_.bg-black]:hidden">
             <NavLink text={"Sign In"} link={"https://sketch.com/signin/"} />
+
             <ActionLink
               text={"Get started"}
               link={"https://sketch.com/signup/"}
@@ -135,6 +144,8 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+
+      <NavAside visible={isAsideVisible} setVisible={setIsAsideVisible} />
     </>
   );
 }
