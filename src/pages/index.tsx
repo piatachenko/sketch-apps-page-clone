@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import Article from "~/components/Article";
 import H1 from "~/components/H1";
 import HeaderParagraph from "~/components/HeaderParagraph";
@@ -97,6 +98,15 @@ const Home: NextPage = () => {
             ))}
           </div>
         </section>
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/page-background.avif"
+            alt="background"
+            width={1920}
+            height={1464}
+            className="absolute top-40 h-[90.5rem] object-cover object-center sm:top-4 md:top-[calc(18.6vw_-_10.628rem)] md:object-[53.5%] lg:top-40 lg:object-center xl:top-[9.5rem] xl:object-[48%] 2xl:top-[calc(15vw_-_2rem)]"
+          />
+        </div>
       </Main>
     </>
   );
