@@ -1,4 +1,10 @@
-import { Fragment, useEffect, type Dispatch, type SetStateAction } from "react";
+import {
+  Fragment,
+  useEffect,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 import XIcon from "~/icons/XIcon";
 import { navLinks } from "~/layouts/Navbar";
 import ActionLink from "./ActionLink";
@@ -12,6 +18,16 @@ export default function NavAside({
   visible?: boolean;
   setVisible: Dispatch<SetStateAction<boolean>>;
 }) {
+  const [bgYPosition, setBgYPosition] = useState(0);
+
+  function handleScroll(e: React.UIEvent<HTMLElement>) {
+    const scrollTop = e.currentTarget.scrollTop;
+    const scrollHeight = e.currentTarget.scrollHeight;
+    const windowHeight = window.innerHeight;
+
+    setBgYPosition((scrollTop * 100) / (scrollHeight - windowHeight) / 1.5);
+  }
+
   useEffect(() => {
     if (visible) {
       document.documentElement.style.overflow = "hidden";
@@ -28,10 +44,10 @@ export default function NavAside({
             ? "pointer-events-none -z-10 opacity-0 transition-all duration-[.25s]"
             : "z-30 backdrop-blur-2xl"
         }
-          `}
+        `}
       >
         <div
-          className={`fixed inset-0 z-40 transition-all ease-[cubic-bezier(.19,1,.22,1)] ${
+          className={`fixed inset-0 z-40 flex transition-all ease-[cubic-bezier(.19,1,.22,1)] ${
             visible === false
               ? "-translate-x-full duration-[.25s]"
               : "translate-x-0 duration-[.4s]"
@@ -39,16 +55,20 @@ export default function NavAside({
           `}
         >
           <aside
-            className="fixed inset-y-0 left-0 z-40 w-[83vw] overflow-auto bg-white bg-[size:1rem] bg-[0_0] bg-no-repeat pl-8 pr-4 md:w-[57vw]"
-            style={{ backgroundImage: "url(/stripe-mobile-nav.png)" }}
+            className="w-[83vw] overflow-auto bg-white bg-[size:1rem] bg-no-repeat pl-8 pr-4 md:w-[57vw]"
+            style={{
+              backgroundImage: "url(/stripe-mobile-nav.png)",
+              backgroundPosition: `0% ${bgYPosition}%`,
+            }}
+            onScroll={handleScroll}
           >
-            <div className="sticky top-0 z-50 -mb-0.5 -mr-2 flex items-center justify-between bg-gradient-to-b from-[white_65%] py-1 text-[.9375rem]">
+            <div className="sticky top-0 z-50 -mb-[1.6rem] -mr-2 flex items-center justify-between bg-gradient-to-b from-[white_65%] py-1 text-[.9375rem]">
               <button onClick={() => setVisible(false)} className="p-2">
                 <XIcon />
               </button>
               <NavLink text={"Sign In"} link={"https://sketch.com/signin/"} />
             </div>
-            <div className="px-2 pb-4">
+            <div>
               {navLinks.map((navLink) =>
                 Object.entries(navLink).map(([title, link], index) => (
                   <Fragment key={index}>
@@ -69,6 +89,13 @@ export default function NavAside({
               />
             </div>
           </aside>
+
+          <div
+            className="h-full flex-auto"
+            onClick={() => {
+              setVisible(false);
+            }}
+          ></div>
         </div>
       </div>
     </>

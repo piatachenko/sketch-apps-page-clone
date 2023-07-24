@@ -21,7 +21,7 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
 
   return (
     <>
-      <div className="group relative block lg:inline-block" tabIndex={0}>
+      <div className="group relative block lg:inline-block max-lg:py-4 [&:not(:last-child)]:max-lg:border-b border-black/[.08] max-lg:[&>*]:px-2" tabIndex={0}>
         <div>
           <div
             className={`pb-1 pr-3 pt-[.625rem] font-semibold transition-colors duration-200 max-lg:text-[.6875rem] max-lg:uppercase max-lg:leading-[1rem] max-lg:text-black/[.48] lg:inline lg:cursor-pointer lg:p-4 lg:pb-2 lg:pl-4 lg:font-medium lg:hover:text-black/[.48] ${
@@ -62,12 +62,12 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
           {filterLinks(dropdown).map(([title, links], index) => (
             <div
               key={index}
-              className={`border-black/[.08] pb-1.5 lg:w-[16.5625rem] lg:pt-2 lg:[&:not(:last-child)]:border-r ${
+              className={`border-black/[.08] lg:pb-1.5 lg:w-[16.5625rem] lg:pt-2 lg:[&:not(:last-child)]:border-r ${
                 links.more && "max-lg:hidden"
               }`}
             >
               <div
-                className={`inline-block pb-2 pr-3 pt-[.625rem] text-[.6875rem] font-semibold uppercase leading-[1rem] text-black/[.48] lg:pl-4 [&:empty]:inline [&:empty]:p-0 ${
+                className={`inline-block pb-2 pr-3 lg:pt-[.625rem] text-[.6875rem] font-semibold uppercase leading-[1rem] text-black/[.48] lg:pl-4 [&:empty]:inline [&:empty]:p-0 ${
                   title === "More" &&
                   "max-lg:invisible max-lg:before:visible max-lg:before:content-['Learn'] "
                 }`}
@@ -78,7 +78,7 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
                 {Object.entries(links).map(([title, props], index) => (
                   <div key={index} className="relative block lg:px-2">
                     <Link
-                      className={`flex items-center rounded-md py-[.375rem] text-[.9375rem] leading-[1.25rem] max-lg:text-base lg:px-3 lg:py-[.625rem] lg:hover:bg-[#F5F5F5] ${
+                      className={`inline-block lg:flex items-center rounded-md py-[.375rem] text-[.9375rem] leading-[1.25rem] max-lg:text-base lg:px-3 lg:py-[.625rem] lg:hover:bg-[#F5F5F5] ${
                         title === "more"
                           ? "mt-3 justify-center after:absolute after:inset-x-0 after:top-[-0.375rem] after:block after:h-[.5px] after:bg-black/[.08] after:content-['']"
                           : "justify-between whitespace-nowrap [&:hover>span]:inline-block"
