@@ -22,7 +22,7 @@ export default function MoreLinkArticle({
         }`}
         style={
           {
-            "--bg-image": `url(${image})`,
+            "--bg-image": `url(${image ?? ""})`,
             "--image-width": "4rem",
           } as CSSProperties
         }

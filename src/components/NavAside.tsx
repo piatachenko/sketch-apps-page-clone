@@ -8,7 +8,7 @@ import {
 import XIcon from "~/icons/XIcon";
 import { navLinks } from "~/layouts/Navbar";
 import ActionLink from "./ActionLink";
-import Dropdown from "./Dropdown";
+import Dropdown, { type DropdownProps } from "./Dropdown";
 import NavLink from "./NavLink";
 
 export default function NavAside({
@@ -76,7 +76,7 @@ export default function NavAside({
                       <></>
                     ) : // <NavLink text={title} link={link} />
                     typeof link === "object" ? (
-                      <Dropdown title={title} dropdown={link} />
+                      <Dropdown title={title} dropdown={link as DropdownProps} />
                     ) : null}
                   </Fragment>
                 ))

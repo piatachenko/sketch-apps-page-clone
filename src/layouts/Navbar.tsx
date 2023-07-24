@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import NavAside from "~/components/NavAside";
 import ActionLink from "../components/ActionLink";
-import Dropdown from "../components/Dropdown";
+import Dropdown, { type DropdownProps } from "../components/Dropdown";
 import NavLink from "../components/NavLink";
 
 export const navLinks = [
@@ -132,7 +132,7 @@ export default function Navbar() {
                     {typeof link === "string" ? (
                       <NavLink text={title} link={link} />
                     ) : typeof link === "object" ? (
-                      <Dropdown title={title} dropdown={link} />
+                      <Dropdown title={title} dropdown={link as DropdownProps} />
                     ) : null}
                   </Fragment>
                 ))
