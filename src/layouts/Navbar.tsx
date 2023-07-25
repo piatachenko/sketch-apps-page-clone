@@ -110,9 +110,7 @@ export default function Navbar() {
       <nav>
         <div
           className={`inset-x-0 top-0 z-30 flex items-center justify-between py-[.325rem] transition-all ease-[cubic-bezier(.455,.03,.515,.955)] max-lg:fixed max-lg:bg-white/80 max-lg:px-2.5 max-lg:shadow-[0_0_0_0.0625rem_rgba(0,0,0,.08)] max-lg:backdrop-blur-2xl dark:max-lg:bg-black/80 lg:py-[1.55rem] ${
-            isAsideVisible
-              ? "max-lg:-translate-y-full"
-              : "translate-y-0 duration-0"
+            isAsideVisible ? "max-lg:-translate-y-full" : "duration-0"
           }`}
         >
           <button onClick={() => setIsAsideVisible(true)} className="lg:hidden">
@@ -132,7 +130,10 @@ export default function Navbar() {
                     {typeof link === "string" ? (
                       <NavLink text={title} link={link} />
                     ) : typeof link === "object" ? (
-                      <Dropdown title={title} dropdown={link as DropdownProps} />
+                      <Dropdown
+                        title={title}
+                        dropdown={link as DropdownProps}
+                      />
                     ) : null}
                   </Fragment>
                 ))
