@@ -45,7 +45,7 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
       >
         <div>
           <div
-            className={`pb-1 pr-3 pt-[.625rem] font-semibold transition-colors duration-200 max-lg:text-[.6875rem] max-lg:uppercase max-lg:leading-[1rem] max-lg:text-black/[.48] lg:inline lg:cursor-pointer lg:p-4 lg:pb-2 lg:pl-4 lg:font-medium lg:hover:text-black/[.48] ${
+            className={`pb-1 pr-3 pt-[.625rem] font-semibold transition-colors duration-200 max-lg:text-[.6875rem] max-lg:uppercase max-lg:leading-[1rem] max-lg:text-black/[.48] lg:inline lg:cursor-pointer lg:p-4 lg:pl-4 lg:font-medium lg:hover:text-black/[.48] ${
               title === "Learn" ? "max-lg:hidden" : ""
             }`}
           >
