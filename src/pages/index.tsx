@@ -104,7 +104,7 @@ const Home: NextPage = () => {
             alt="background"
             width={1920}
             height={1464}
-            className="absolute top-40 h-[90.5rem] object-cover object-center sm:top-4 md:top-[calc(18.6vw_-_10.628rem)] md:object-[53.5%] lg:top-40 lg:object-center xl:top-[9.5rem] xl:object-[48%] 2xl:top-[calc(15vw_-_2rem)]"
+            className="absolute top-40 h-[90.5rem] object-cover object-center sm:top-4 md:top-[calc(18.6vw_-_10.628rem)] md:object-[53.5%] lg:top-40 lg:object-center xl:top-[9.5rem] xl:object-[48%] 2xl:top-[calc(15vw_-_2rem)] 2xl:w-full 2xl:h-auto"
           />
         </div>
       </Main>
