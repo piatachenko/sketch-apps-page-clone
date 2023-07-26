@@ -30,9 +30,9 @@ export default function NavAside({
 
   useEffect(() => {
     if (visible) {
-      document.documentElement.style.overflow = "hidden";
+      document.body.classList.add("max-lg:overflow-hidden");
     } else {
-      document.documentElement.style.overflow = "auto";
+      document.body.classList.remove("max-lg:overflow-hidden");
     }
   }, [visible]);
 
