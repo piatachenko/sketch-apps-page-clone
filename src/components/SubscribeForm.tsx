@@ -108,9 +108,11 @@ export default function SubscribeForm() {
 
         <div
           ref={alertRef}
-          className="fixed bottom-6 right-1/2 z-20 translate-x-1/2 translate-y-[calc(1.5rem_+_100%)] rounded-xl border border-white/10 bg-[--green] px-5 py-4 text-sm font-semibold leading-4 text-white shadow-md transition-all duration-300"
+          className="fixed bottom-6 right-1/2 z-20 w-full max-w-max translate-x-1/2 translate-y-[calc(1.5rem_+_100%)] px-6 transition-all duration-300"
         >
-          We’ve successfully received your submission. Thank you!
+          <div className="rounded-xl border border-white/10 bg-[--green] px-5 py-4 text-sm font-semibold leading-4 text-white shadow-md">
+            We’ve successfully received your submission. Thank you!
+          </div>
         </div>
       </div>
     </>
