@@ -42,7 +42,7 @@ export default function NavAside({
         className={`fixed inset-0 dark:text-[#ccc] lg:hidden ${
           visible === false
             ? "pointer-events-none -z-10 opacity-0 transition-all duration-[.25s]"
-            : "z-30 backdrop-blur-2xl"
+            : "z-30 backdrop-blur-2xl bg-black/20"
         }
         `}
       >
