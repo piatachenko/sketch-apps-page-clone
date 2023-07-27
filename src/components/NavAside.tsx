@@ -39,7 +39,7 @@ export default function NavAside({
   return (
     <>
       <div
-        className={`fixed inset-0 lg:hidden ${
+        className={`fixed inset-0 dark:text-[#ccc] lg:hidden ${
           visible === false
             ? "pointer-events-none -z-10 opacity-0 transition-all duration-[.25s]"
             : "z-30 backdrop-blur-2xl"
@@ -55,14 +55,14 @@ export default function NavAside({
           `}
         >
           <aside
-            className="w-[83vw] overflow-auto bg-white bg-[size:1rem] bg-no-repeat pl-8 pr-4 md:w-[57vw]"
+            className="w-[83vw] overflow-auto bg-white bg-[size:1rem] bg-no-repeat pl-8 pr-4 dark:bg-[#212123] md:w-[57vw]"
             style={{
               backgroundImage: "url(/stripe-mobile-nav.png)",
               backgroundPosition: `0% ${bgYPosition}%`,
             }}
             onScroll={handleScroll}
           >
-            <div className="sticky top-0 z-50 -mb-[1.6rem] -mr-2 flex items-center justify-between bg-gradient-to-b from-[white_65%] py-1 text-[.9375rem]">
+            <div className="sticky top-0 z-50 -mb-[1.6rem] -mr-2 flex items-center justify-between bg-gradient-to-b from-[white_65%] py-1 text-[.9375rem] dark:from-[#212123_65%]">
               <button onClick={() => setVisible(false)} className="p-2">
                 <XIcon />
               </button>
@@ -76,13 +76,16 @@ export default function NavAside({
                       <></>
                     ) : // <NavLink text={title} link={link} />
                     typeof link === "object" ? (
-                      <Dropdown title={title} dropdown={link as DropdownProps} />
+                      <Dropdown
+                        title={title}
+                        dropdown={link as DropdownProps}
+                      />
                     ) : null}
                   </Fragment>
                 ))
               )}
             </div>
-            <div className="sticky bottom-0 z-50 flex items-center justify-center bg-gradient-to-t from-[white_67%] px-2 py-6 text-center [&>*]:flex-1 [&>*]:border [&>*]:border-black [&>*]:py-[.5625rem]">
+            <div className="sticky bottom-0 z-50 flex items-center justify-center bg-gradient-to-t from-[white_67%] px-2 py-6 text-center dark:from-[#212123_67%] [&>*]:flex-1 [&>*]:border [&>*]:border-black [&>*]:py-[.5625rem] [&>*]:text-black dark:[&>*]:bg-white">
               <ActionLink
                 text={"Get started for free"}
                 link={"https://sketch.com/signup/"}

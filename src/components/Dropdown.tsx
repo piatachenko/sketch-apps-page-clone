@@ -40,15 +40,11 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
   return (
     <>
       <div
-        className="group relative block border-black/[.08] max-lg:py-4 lg:inline-block [&:not(:last-child)]:max-lg:border-b max-lg:[&>*]:px-2"
+        className="group relative block border-black/[.08] max-lg:py-4 dark:max-lg:border-white/[.08] lg:inline-block [&:not(:last-child)]:max-lg:border-b max-lg:[&>*]:px-2"
         tabIndex={0}
       >
         <div>
-          <div
-            className={`pb-1 pr-3 pt-[.625rem] font-semibold transition-colors duration-200 max-lg:text-[.6875rem] max-lg:uppercase max-lg:leading-[1rem] max-lg:text-black/[.48] lg:inline lg:cursor-pointer lg:p-4 lg:pl-4 lg:font-medium lg:hover:text-black/[.48] ${
-              title === "Learn" ? "max-lg:hidden" : ""
-            }`}
-          >
+          <div className="pb-1 pr-3 pt-[.625rem] font-semibold transition-colors duration-200 max-lg:text-[.6875rem] max-lg:uppercase max-lg:leading-[1rem] max-lg:text-black/[.48] dark:max-lg:text-white/[.48] lg:inline lg:cursor-pointer lg:p-4 lg:pl-4 lg:font-medium lg:hover:text-black/[.48]">
             {title}
             <svg
               className="ml-1 hidden translate-y-[-.0375rem] opacity-[.32] lg:inline-block"
@@ -87,13 +83,7 @@ export default function Dropdown({ title, dropdown }: DropdownProps) {
                 links.more ? "max-lg:hidden" : ""
               }`}
             >
-              <div
-                className={`inline-block pb-2 pr-3 text-[.6875rem] font-semibold uppercase leading-[1rem] text-black/[.48] lg:pl-4 lg:pt-[.625rem] [&:empty]:inline [&:empty]:p-0 ${
-                  title === "More"
-                    ? "max-lg:invisible max-lg:before:visible max-lg:before:content-['Learn']"
-                    : ""
-                }`}
-              >
+              <div className="hidden pb-2 pr-3 text-[.6875rem] font-semibold uppercase leading-[1rem] text-black/[.48] lg:inline-block lg:pl-4 lg:pt-[.625rem] [&:empty]:inline [&:empty]:p-0">
                 {title}
               </div>
               <div>

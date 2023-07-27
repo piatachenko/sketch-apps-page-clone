@@ -144,7 +144,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="space-x-4 max-lg:contents dark:max-lg:text-white max-lg:[&_*]:text-[.9375rem] max-xl:[&_.bg-black]:p-3 max-xl:[&_.bg-black]:text-[.875rem] max-lg:[&_.bg-black]:hidden dark:max-lg:[&_:hover]:text-[unset]">
+          <div className="space-x-4 max-lg:contents dark:max-lg:text-[#ebebeb] max-lg:[&_*]:text-[.9375rem] max-xl:[&_.bg-black]:p-3 max-xl:[&_.bg-black]:text-[.875rem] max-lg:[&_.bg-black]:hidden dark:max-lg:[&_:hover]:text-[unset]">
             <NavLink text={"Sign In"} link={"https://sketch.com/signin/"} />
 
             <ActionLink
