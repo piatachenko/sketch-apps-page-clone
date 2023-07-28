@@ -42,7 +42,7 @@ export default function NavAside({
         className={`fixed inset-0 dark:text-[#ccc] lg:hidden ${
           visible === false
             ? "pointer-events-none -z-10 opacity-0 transition-all duration-[.25s]"
-            : "z-30 backdrop-blur-2xl bg-black/20"
+            : "z-30 bg-black/20 backdrop-blur-2xl"
         }
         `}
       >
@@ -63,7 +63,11 @@ export default function NavAside({
             onScroll={handleScroll}
           >
             <div className="sticky top-0 z-50 -mb-[1.6rem] -mr-2 flex items-center justify-between bg-gradient-to-b from-[white_65%] py-1 text-[.9375rem] dark:from-[#212123_65%]">
-              <button onClick={() => setVisible(false)} className="p-2">
+              <button
+                onClick={() => setVisible(false)}
+                className="p-2"
+                title="Close menu"
+              >
                 <XIcon />
               </button>
               <NavLink text={"Sign In"} link={"https://sketch.com/signin/"} />

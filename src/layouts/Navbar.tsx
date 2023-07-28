@@ -116,6 +116,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsAsideVisible(true)}
             className="max-sm:ml-0.5 lg:hidden"
+            title="Open menu"
           >
             <div className="relative m-4 h-1.5 w-5 before:absolute before:inset-x-0 before:top-0 before:block before:h-0.5 before:-translate-y-full before:rounded-full before:bg-black before:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:block after:h-0.5 after:translate-y-full after:rounded-full after:bg-black after:content-[''] dark:before:bg-[#ebebeb] dark:after:bg-[#ebebeb]" />
           </button>
@@ -124,6 +125,7 @@ export default function Navbar() {
             <Link
               href={"https://sketch.com/"}
               className="logo aspect-square w-[32px] transition-opacity duration-[.125s] ease-out hover:opacity-[.48] max-lg:absolute max-lg:right-1/2 max-lg:translate-x-1/2 max-lg:scale-[.81] max-lg:opacity-90 dark:max-lg:invert"
+              title="Go to Homepage"
             />
 
             <div className="max-lg:hidden">
