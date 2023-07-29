@@ -11,7 +11,11 @@ interface ArticleProps {
   header?: string;
   paragraph?: string;
   image?: string;
-  mobileImage?: string;
+  mobileImage?: {
+    src: string;
+    width?: number;
+    height?: number;
+  };
   moreImage?: string;
   more?: {
     text: string;
@@ -45,16 +49,18 @@ export default function Article({
             className="md:max-lg:group-[:nth-child(3)]:scale-[.9 5] hidden max-xl:object-cover md:block md:max-xl:group-first:origin-top-left md:max-xl:group-[:nth-child(2)]:origin-bottom-right md:max-xl:group-[:nth-child(3)]:origin-bottom-left md:max-lg:group-first:scale-[.795] md:max-lg:group-first:object-[63%] md:max-lg:group-[:nth-child(2)]:translate-y-[-2.7rem] md:max-lg:group-[:nth-child(2)]:scale-[.9] md:max-lg:group-[:nth-child(2)]:object-[12%] md:max-lg:group-[:nth-child(3)]:object-[107%] lg:max-xl:group-first:scale-[.94] lg:max-xl:group-first:object-[87%_100%] lg:max-xl:group-[:nth-child(2)]:translate-y-[-2.4rem] lg:max-xl:group-[:nth-child(2)]:scale-[.92] lg:max-xl:group-[:nth-child(3)]:scale-[.816] lg:max-xl:group-[:nth-child(2)]:object-[20%] lg:max-xl:group-[:nth-child(3)]:object-[31%]"
             width={1174}
             height={990}
-            sizes="(max-width: 768px) 0, 100%"
+            priority
+            sizes="(max-width: 768px) 0, 50%"
           />
         )}
         {!!mobileImage && (
           <Image
-            src={mobileImage}
+            src={mobileImage.src}
             alt={""}
             className="block md:hidden"
-            width={1000}
-            height={585}
+            width={mobileImage.width ?? 828}
+            height={mobileImage.height ?? 585}
+            priority
             sizes="(min-width: 768px) 0, 100%"
           />
         )}

@@ -14,7 +14,7 @@ const articles = [
     paragraph:
       "Design, prototype, and illustrate in a truly native macOS app, online or offline. Work in private or collaborate with others, in real time.",
     image: "/article-first-default.avif",
-    mobileImage: "/article-first-mobile.avif",
+    mobileImage: { src: "/article-first-mobile.avif", width: 828, height: 485 },
     more: {
       image: "/1ml.avif",
       text: "Everything you need to know about the Sketch <b>Mac app</b>",
@@ -38,7 +38,11 @@ const articles = [
     paragraph:
       "Browse documents, inspect designs, export assets, discuss feedback, manage users, and invite guests — on any computer, in any browser.",
     image: "/article-second-default.avif",
-    mobileImage: "/article-second-mobile.avif",
+    mobileImage: {
+      src: "/article-second-mobile.avif",
+      width: 828,
+      height: 576,
+    },
     more: {
       image: "/2ml.avif",
       text: "Everything you need to know about the Sketch <b>Web app</b>",
@@ -52,7 +56,7 @@ const articles = [
     paragraph:
       "View your documents on the go, play prototypes on a real device, and mirror designs as you edit them on your Mac.",
     image: "/article-third-default.avif",
-    mobileImage: "/article-third-mobile.avif",
+    mobileImage: { src: "/article-third-mobile.avif", width: 828, height: 767 },
     action: {
       text: "Download on the App Store",
       link: "https://apps.apple.com/app/sketch-view-and-mirror/id1609224699",

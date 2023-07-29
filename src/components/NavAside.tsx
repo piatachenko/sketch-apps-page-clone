@@ -62,7 +62,7 @@ export default function NavAside({
             }}
             onScroll={handleScroll}
           >
-            <div className="sticky top-0 z-50 -mb-[1.6rem] -mr-2 flex items-center justify-between bg-gradient-to-b from-[white_65%] py-1 text-[.9375rem] dark:from-[#212123_65%]">
+            <div className="sticky top-0 z-50 -mb-[1.6rem] -mr-2 flex items-center justify-between bg-gradient-to-b from-[white_65%] py-1 text-[.9375rem] dark:from-[#212123_65%] dark:[&_a:hover]:text-[unset]">
               <button
                 onClick={() => setVisible(false)}
                 className="p-2"
