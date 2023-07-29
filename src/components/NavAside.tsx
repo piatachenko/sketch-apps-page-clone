@@ -55,7 +55,7 @@ export default function NavAside({
           `}
         >
           <aside
-            className="w-[83vw] overflow-auto bg-white bg-[size:1rem] bg-no-repeat pl-8 pr-4 dark:bg-[#212123] md:w-[57vw]"
+            className="w-[83vw] overflow-auto bg-white bg-[size:16px_max(1338px,_100vh)] bg-no-repeat pl-8 pr-4 dark:bg-[#212123] md:w-[57vw]"
             style={{
               backgroundImage: "url(/stripe-mobile-nav.png)",
               backgroundPosition: `0% ${bgYPosition}%`,
