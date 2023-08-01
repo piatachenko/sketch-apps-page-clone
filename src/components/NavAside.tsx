@@ -89,7 +89,7 @@ export default function NavAside({
                 ))
               )}
             </div>
-            <div className="sticky bottom-0 z-50 flex items-center justify-center bg-gradient-to-t from-[white_67%] px-2 py-6 text-center dark:from-[#212123_67%] [&>*]:flex-1 [&>*]:border [&>*]:border-black [&>*]:py-[.5625rem] [&>*]:text-black dark:[&>*]:bg-white">
+            <div className="sticky bottom-0 z-50 flex items-center justify-center bg-gradient-to-t from-[white_67%] px-2 py-6 text-center dark:from-[#212123_67%] [&>*]:flex-1 [&>*]:border [&>*]:border-black [&>*]:py-[.5625rem] dark:[&>*]:bg-white dark:[&>*]:text-black dark:[&>*]:border-white dark:[&>:hover]:bg-white">
               <ActionLink
                 text={"Get started for free"}
                 link={"https://sketch.com/signup/"}

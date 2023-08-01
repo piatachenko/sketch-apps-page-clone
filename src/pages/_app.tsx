@@ -10,10 +10,10 @@ const marfa = localFont({
       path: "../../public/Marfa-Regular.woff",
       weight: "400",
     },
-    {
-      path: "../../public/Marfa-Thin.woff",
-      weight: "100",
-    },
+    // {
+    //   path: "../../public/Marfa-Thin.woff",
+    //   weight: "100",
+    // },
     {
       path: "../../public/Marfa-Light.woff",
       weight: "300",
