@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import ActionLink from "./ActionLink";
 import AdditionalArticle from "./AdditionalArticle";
 import Badge from "./Badge";
@@ -10,9 +10,9 @@ interface ArticleProps {
   badge?: string;
   header?: string;
   paragraph?: string;
-  image?: string;
+  image?: StaticImageData;
   mobileImage?: {
-    src: string;
+    src: StaticImageData;
     width?: number;
     height?: number;
   };
@@ -49,7 +49,7 @@ export default function Article({
             className="hidden overflow-visible max-xl:object-cover md:block md:max-xl:group-first:origin-top-left md:max-xl:group-[:nth-child(2)]:origin-bottom-right md:max-xl:group-[:nth-child(3)]:origin-bottom-left md:max-lg:group-first:scale-[.795] md:max-lg:group-first:object-[63%] md:max-lg:group-[:nth-child(2)]:translate-y-[-2.7rem] md:max-lg:group-[:nth-child(2)]:scale-[.9] md:max-lg:group-[:nth-child(2)]:object-[12%] md:max-lg:group-[:nth-child(3)]:object-[107%] lg:max-xl:group-first:scale-[.94] lg:max-xl:group-first:object-[87%_100%] lg:max-xl:group-[:nth-child(2)]:translate-y-[-2.4rem] lg:max-xl:group-[:nth-child(2)]:scale-[.92] lg:max-xl:group-[:nth-child(3)]:scale-[.816] lg:max-xl:group-[:nth-child(2)]:object-[20%] lg:max-xl:group-[:nth-child(3)]:object-[31%] "
             width={1174}
             height={990}
-            sizes="(max-width: 767px) 0, 50%"
+            placeholder="blur"
           />
         )}
         {!!mobileImage && (
@@ -59,7 +59,7 @@ export default function Article({
             className="block md:hidden"
             width={mobileImage.width ?? 828}
             height={mobileImage.height ?? 585}
-            sizes="(min-width: 768px) 0, 100%"
+            placeholder="blur"
           />
         )}
         <div className="px-5 pb-3 pt-10 group-first:translate-y-[-.12rem] max-md:group-first:pb-2 max-md:group-first:pt-6 max-md:group-[:nth-child(2)]:pb-0 sm:px-6 md:px-5 md:pb-9 md:group-[:nth-child(2)]:pb-7 lg:px-8 lg:py-14 lg:max-xl:group-[:nth-child(2)]:pb-10 xl:pl-8 xl:pr-10">

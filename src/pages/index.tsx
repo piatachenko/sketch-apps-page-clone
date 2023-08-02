@@ -6,6 +6,14 @@ import H1 from "~/components/H1";
 import HeaderParagraph from "~/components/HeaderParagraph";
 import Header from "~/layouts/Header";
 import Main from "~/layouts/Main";
+import background from "../../public/page-background.avif";
+
+import articleFirstDefaultImage from "../../public/article-first-default.avif";
+import articleFirstMobileImage from "../../public/article-first-mobile.avif";
+import articleSecondDefaultImage from "../../public/article-second-default.avif";
+import articleSecondMobileImage from "../../public/article-second-mobile.avif";
+import articleThirdDefaultImage from "../../public/article-third-default.avif";
+import articleThirdMobileImage from "../../public/article-third-mobile.avif";
 
 const articles = [
   {
@@ -13,8 +21,8 @@ const articles = [
     header: "Design on your Mac",
     paragraph:
       "Design, prototype, and illustrate in a truly native macOS app, online or offline. Work in private or collaborate with others, in real time.",
-    image: "/article-first-default.avif",
-    mobileImage: { src: "/article-first-mobile.avif", width: 828, height: 485 },
+    image: articleFirstDefaultImage,
+    mobileImage: { src: articleFirstMobileImage, width: 828, height: 485 },
     more: {
       image: "/1ml.avif",
       text: "Everything you need to know about the Sketch <b>Mac app</b>",
@@ -37,9 +45,9 @@ const articles = [
     header: "Explore in your browser",
     paragraph:
       "Browse documents, inspect designs, export assets, discuss feedback, manage users, and invite guests — on any computer, in any browser.",
-    image: "/article-second-default.avif",
+    image: articleSecondDefaultImage,
     mobileImage: {
-      src: "/article-second-mobile.avif",
+      src: articleSecondMobileImage,
       width: 828,
       height: 576,
     },
@@ -55,8 +63,8 @@ const articles = [
     header: "Preview on iPhone",
     paragraph:
       "View your documents on the go, play prototypes on a real device, and mirror designs as you edit them on your Mac.",
-    image: "/article-third-default.avif",
-    mobileImage: { src: "/article-third-mobile.avif", width: 828, height: 767 },
+    image: articleThirdDefaultImage,
+    mobileImage: { src: articleThirdMobileImage, width: 828, height: 767 },
     action: {
       text: "Download on the App Store",
       link: "https://apps.apple.com/app/sketch-view-and-mirror/id1609224699",
@@ -199,7 +207,7 @@ const Home: NextPage = () => {
         </section>
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/page-background.avif"
+            src={background}
             alt="background"
             width={1920}
             height={1464}
